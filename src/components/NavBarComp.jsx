@@ -4,18 +4,13 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
-import { REMOVE } from "../redux/actions/action";
 
 const NavBarComp = () => {
   const getData = useSelector((state) => state.cartReducer.carts);
 
-  const dispatch = useDispatch();
-  const remove = (id) => {
-    dispatch(REMOVE(id));
-  };
   const popover = <Popover id="popover-basic"></Popover>;
   return (
     <div>

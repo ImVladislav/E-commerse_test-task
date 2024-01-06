@@ -85,79 +85,7 @@ const Products = () => {
       </>
     );
   };
-  const filterProduct = (cat) => {
-    const updatedItems = data.filter((item) => item.category === cat);
-    setFilter(updatedItems);
-  };
 
-  const ShowProducts = () => {
-    return (
-      <>
-        <div className="buttons">
-          <Button
-            onClick={() => setFilter(data)}
-            className="me-2"
-            variant="outline-dark"
-          >
-            All Brands
-          </Button>
-          <Button
-            onClick={() => filterProduct("men's clothing")}
-            className="me-2"
-            variant="outline-dark"
-          >
-            Men
-          </Button>
-          <Button
-            onClick={() => filterProduct("women's clothing")}
-            className="me-2"
-            variant="outline-dark"
-          >
-            Women
-          </Button>
-          <Button
-            onClick={() => filterProduct("jewelery")}
-            className="me-2"
-            variant="outline-dark"
-          >
-            Jewelery
-          </Button>
-          <Button
-            onClick={() => filterProduct("electronics")}
-            className="me-2"
-            variant="outline-dark"
-          >
-            Electronics
-          </Button>
-        </div>
-        {filter.map((item) => {
-          return (
-            <div className=" col-3 m-1 ">
-              <Card
-                key={item.id}
-                style={{ height: "100%" }}
-                className="m-1 border border-dark "
-              >
-                <Card.Img
-                  variant="top"
-                  style={{ height: "50%", width: "100%" }}
-                  src={item.image}
-                />
-                <Card.Body style={{ display: "inline-grid" }}>
-                  <Card.Title>{item.title.substring(0, 12)}</Card.Title>
-                  <Card.Text className="fw-bold">$ {item.price}</Card.Text>
-                  <Link to={`/products/${item.id}`}>
-                    {" "}
-                    <Button variant="dark">Buy Now</Button>
-                  </Link>
-                </Card.Body>
-              </Card>
-            </div>
-          );
-        })}
-      </>
-    );
-  };
   return (
     <div>
       <div className="container mt-5 pb-5">

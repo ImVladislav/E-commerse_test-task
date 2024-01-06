@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Checkout = () => {
   const getData = useSelector((state) => state.cartReducer.carts);
-  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     name: "",
